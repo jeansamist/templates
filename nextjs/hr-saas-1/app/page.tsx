@@ -2,8 +2,10 @@ import { AppHeader } from "@/components/app-header";
 import { TotalEmployeeChart } from "@/components/charts/total-employee-chart";
 import { TotalProjectChart } from "@/components/charts/total-project-chart";
 import { TotalTaskChart } from "@/components/charts/total-task-chart";
+import StreakOverview from "@/components/streak-overview";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { mockStreakData } from "@/mocks/streaks";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 export default function Page() {
@@ -93,6 +95,15 @@ export default function Page() {
               </div>
             </div>
             <TotalTaskChart className="max-w-24" />
+          </CardContent>
+        </Card>
+      </div>
+      <div className="p-4">
+        <Card>
+          <CardContent className="overflow-x-auto w-[800px]!">
+            <div className="w-[800px]!  ">
+              <StreakOverview data={mockStreakData} year={2025} />
+            </div>
           </CardContent>
         </Card>
       </div>
