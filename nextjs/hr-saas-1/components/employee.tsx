@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/input-group";
 import { MoreHorizontal, Search } from "lucide-react";
 import { FunctionComponent } from "react";
+import { EmployeeDataTable } from "./data-tables/employee-table/employee-data-table";
 
 export const Employee: FunctionComponent = () => {
   return (
@@ -38,7 +39,9 @@ export const Employee: FunctionComponent = () => {
             </Button>
           </CardAction>
         </CardHeader>
-        <CardContent className="overflow-x-auto"></CardContent>
+        <CardContent className="overflow-x-auto">
+          <EmployeeDataTable />
+        </CardContent>
       </Card>
     </div>
   );
