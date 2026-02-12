@@ -1,6 +1,6 @@
-export const generateMockStreakData = () => {
-  const start = new Date(2025, 0, 1); // Jan 1, 2025
-  const end = new Date(2025, 11, 31); // Dec 31, 2025
+export const generateMockStreakData = (year = 2025) => {
+  const start = new Date(year, 0, 1); // Jan 1, year
+  const end = new Date(year, 11, 31); // Dec 31, year
 
   const data = [];
 
@@ -47,5 +47,3 @@ export const generateMockStreakData = () => {
 
   return data;
 };
-
-export const mockStreakData = generateMockStreakData();

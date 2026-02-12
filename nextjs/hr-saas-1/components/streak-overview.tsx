@@ -34,7 +34,7 @@ const StreakOverview: React.FC<StreakOverviewProps> = ({
   const dataMap = new Map(data.map((d) => [d.date, d.intensity]));
 
   const getIntensityClass = (intensity: number): string => {
-    if (intensity === 0) return "bg-muted";
+    if (intensity === 0) return "bg-gray-100 dark:bg-muted";
     if (intensity <= 25) return "bg-emerald-100";
     if (intensity <= 50) return "bg-emerald-400";
     if (intensity <= 75) return "bg-emerald-600";
@@ -94,7 +94,7 @@ const StreakOverview: React.FC<StreakOverviewProps> = ({
             return (
               <div
                 key={weekIdx}
-                className="flex-1 text-xs text-gray-600 text-left"
+                className="flex-1 text-xs text-muted-foreground text-left"
               >
                 {month ? month.label : ""}
               </div>
@@ -106,7 +106,7 @@ const StreakOverview: React.FC<StreakOverviewProps> = ({
       {/* Grid with weekday labels */}
       <div className="flex">
         {/* Weekday labels on the left */}
-        <div className="flex flex-col gap-1 w-10 text-xs text-gray-600 mr-2">
+        <div className="flex flex-col gap-1 w-10 text-xs text-muted-foreground mr-2">
           {weekDays.map((day) => (
             <div key={day} className="h-full flex items-center">
               {day}
@@ -135,7 +135,7 @@ const StreakOverview: React.FC<StreakOverviewProps> = ({
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-between gap-2 mt-4 text-xs text-gray-600 flex-wrap">
+      <div className="flex items-center justify-between gap-2 mt-4 text-xs text-muted-foreground flex-wrap">
         <div className="flex items-center gap-2">
           <span>How contribution works?</span>
           <button className="underline font-medium text-gray-900">
@@ -145,10 +145,10 @@ const StreakOverview: React.FC<StreakOverviewProps> = ({
         <div className="flex items-center gap-1">
           <span>0%</span>
           <div className="flex gap-1">
-            <div className="w-3 h-3 rounded-sm bg-gray-100" />
-            <div className="w-3 h-3 rounded-sm bg-emerald-200" />
-            <div className="w-3 h-3 rounded-sm bg-emerald-400" />
-            <div className="w-3 h-3 rounded-sm bg-emerald-700" />
+            <div className="w-6 h-3 rounded bg-gray-100" />
+            <div className="w-6 h-3 rounded bg-emerald-200" />
+            <div className="w-6 h-3 rounded bg-emerald-400" />
+            <div className="w-6 h-3 rounded bg-emerald-700" />
           </div>
           <span>100%</span>
         </div>

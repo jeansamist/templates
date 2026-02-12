@@ -3,18 +3,22 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 import { cn } from "@/lib/utils";
 import { FunctionComponent, useMemo } from "react";
 import { Area, AreaChart, CartesianGrid } from "recharts";
-export type TotalProjectChartProps = { className?: string };
+export type TotalProjectChartProps = {
+  className?: string;
+  data?: { month: string; projects: number }[];
+};
 export const TotalProjectChart: FunctionComponent<TotalProjectChartProps> = ({
   className,
+  data = [
+    { month: "Dec", projects: 0 },
+    { month: "Jan", projects: 40 },
+    { month: "Feb", projects: 40 },
+    { month: "Mar", projects: 55 },
+  ],
 }) => {
   const chartData = useMemo<{ month: string; projects: number }[]>(() => {
-    return [
-      { month: "Dec", projects: 0 },
-      { month: "Jan", projects: 40 },
-      { month: "Feb", projects: 40 },
-      { month: "Mar", projects: 55 },
-    ];
-  }, []);
+    return data;
+  }, [data]);
   const chartConfig = useMemo<ChartConfig>(() => {
     return {
       projects: {
