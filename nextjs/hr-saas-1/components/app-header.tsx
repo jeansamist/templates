@@ -12,7 +12,8 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { Bell, MessageSquare, Search } from "lucide-react";
+import { Bell, Github, MessageSquare, Search } from "lucide-react";
+import Link from "next/link";
 import React, { FunctionComponent } from "react";
 import { ModeToggle } from "./theme-toggle-button";
 import { Button } from "./ui/button";
@@ -70,6 +71,16 @@ export const AppHeader: FunctionComponent<AppHeaderProps> = ({
           <MessageSquare />
         </Button>
         <ModeToggle />
+        <Separator orientation="vertical" />
+        <Button variant="outline" asChild>
+          <Link
+            target="_blank"
+            href="https://github.com/jeansamist/templates/tree/main/nextjs/hr-saas-1"
+          >
+            Open on GitHub
+            <Github />
+          </Link>
+        </Button>
       </div>
     </header>
   );
